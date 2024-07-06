@@ -1,0 +1,38 @@
+#root {
+  padding: 2rem;
+  text-align: center;
+  margin: auto;
+  max-width: 800px;
+}
+
+html {
+  background-color: #0b1215;
+  color: white;
+}
+
+@font-face {
+  font-family: "Satoshi-Medium";
+  src: url("../public/Satoshi_Complete/Fonts/OTF/Satoshi-Medium.otf");
+}
+
+.satoshi-medium{
+  font-family: Satoshi-Medium;
+}
+
+@font-face {
+  font-family: "Satoshi-Bold";
+  src: url("../public/Satoshi_Complete/Fonts/OTF/Satoshi-Bold.otf");
+}
+
+.satoshi-bold {
+  font-family: Satoshi-Bold;
+}
+
+@font-face {
+  font-family: "Satoshi-Bold-Italic";
+  src: url("../public/Satoshi_Complete/Fonts/OTF/Satoshi-BoldItalic.otf"); 
+}
+
+.satoshi-bold-italic{
+  font-family: Satoshi-Bold-Italic;
+}
