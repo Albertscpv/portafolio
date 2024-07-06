@@ -7,8 +7,8 @@ function DesignsPage(){
         </p>
         <div className="flex flex-col gap-5 mb-5">
             <div className="flex w-[100%] justify-between gap-5 ">
-                            <img className="flex w-[35%] rounded-md" src="./public/images/EstralPoster.png" alt="ImageDesign"/>
-                            <img className="flex w-[65%] rounded-md" src="./public/images/Design1.png" alt="ImageDesign"/>
+                            <img className="flex w-[35%] rounded-md" src="/images/EstralPoster.png" alt="ImageDesign"/>
+                            <img className="flex w-[65%] rounded-md" src="/images/Design1.png" alt="ImageDesign"/>
             </div>
             {/* <div className="flex w-[100%] justify-between gap-5">
                             <img className="flex w-[65%] rounded-md object-scale-down " src="./public/images/506Post.png" alt="ImageDesign"/>
