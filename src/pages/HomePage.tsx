@@ -3,7 +3,7 @@ function HomePage(){
         <div className="flex flex-col gap-10 ">
           <p className="text-left text-2xl font-satoshi-bold">Hi, I am Chris</p>
           <p className="text-left  ">
-             I am a full stack developer with a passion for building applications. I love learn and find how to solve people's problems. In my free time I make content on social media to share my knowledge.  
+             I am a full stack developer and Accountant with a passion for building new things. I love learn and find how to solve people's problems. In my free time I make content on social media to share my knowledge.  
           </p>
           <div className="flex flex-col gap-5">
           <div className="flex w-[100%] justify-between gap-5 ">
