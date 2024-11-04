@@ -24,7 +24,7 @@ function ProjectPage(){
                     career as a programmer. 
                 </p>
                 <div>
-                    <div className="grid md:gris-cols-[1fr_1fr] gap-5 text-[14px]">
+                    <div className="grid md:grid-cols-[1fr_1fr] gap-5 text-[14px]">
                         {projects.map((project: project) => (
                         <a key={project.name} href={project.html_url} target="_blank">
                             <div 
