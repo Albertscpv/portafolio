@@ -10,10 +10,14 @@ function DesignsPage(){
                             <img className="flex w-[35%] rounded-md" src="/images/EstralPoster.png" alt="ImageDesign"/>
                             <img className="flex w-[65%] rounded-md" src="/images/Design1.png" alt="ImageDesign"/>
             </div>
-            {/* <div className="flex w-[100%] justify-between gap-5">
-                            <img className="flex w-[65%] rounded-md object-scale-down " src="./public/images/506Post.png" alt="ImageDesign"/>
-                            <img className="flex w-[35%] rounded-" src="./public/images/SmoothKangaroo.png" alt="ImageDesign"/>
-            </div> */}
+            <div className="flex w-[100%] justify-between gap-5">
+                            <img className="flex w-[50%] rounded-md object-scale-down " src="./public/images/C1.jpg" alt="ImageDesign"/>
+                            <img className="flex w-[50%] rounded-md" src="./public/images/C5.jpg" alt="ImageDesign"/>  
+            </div>
+            <div className="flex w-[100%] justify-between gap-5">
+                            <img className="flex w-[50%] rounded-md object-scale-down " src="./public/images/C2.jpg" alt="ImageDesign"/>
+                            <img className="flex w-[50%] rounded-md" src="./public/images/C7.jpg" alt="ImageDesign"/>  
+            </div>
         </div>
         <p className="text-left text-xl font-satoshi-bold-italic ">
             New designs coming soon.
