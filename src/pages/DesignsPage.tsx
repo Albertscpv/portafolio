@@ -11,11 +11,11 @@ function DesignsPage(){
                             <img className="flex w-[65%] rounded-md" src="/images/Design1.png" alt="ImageDesign"/>
             </div>
             <div className="flex w-[100%] justify-between gap-5">
-                            <img className="flex w-[50%] rounded-md object-scale-down " src="./public/images/C1.jpg" alt="ImageDesign"/>
+                            <img className="flex w-[50%] rounded-md object-scale-down " src="/images/C1.jpg" alt="ImageDesign"/>
                             <img className="flex w-[50%] rounded-md" src="/images/C5.jpg" alt="ImageDesign"/>  
             </div>
             <div className="flex w-[100%] justify-between gap-5">
-                            <img className="flex w-[50%] rounded-md object-scale-down " src="./public/images/C2.jpg" alt="ImageDesign"/>
+                            <img className="flex w-[50%] rounded-md object-scale-down " src="/images/C2.jpg" alt="ImageDesign"/>
                             <img className="flex w-[50%] rounded-md" src="/images/C7.jpg" alt="ImageDesign"/>  
             </div>
         </div>
