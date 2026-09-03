@@ -1,22 +1,36 @@
-function HomePage(){
-    return(
-        <div className="flex flex-col gap-10 ">
-          <p className="text-left text-2xl font-satoshi-bold">Hi, I am Chris</p>
-          <p className="text-left  ">
-             I am a full stack developer and Accountant with a passion for building new things. I love learn and find how to solve people's problems. In my free time I make content on social media to share my knowledge.  
-          </p>
-          <div className="flex flex-col gap-5">
-          <div className="flex w-[100%] justify-between gap-5 ">
-                <img src="/images/verticalPic.jpg" alt="" className="w-[35%] rounded-md object-cover " />
-                <img src="/images/Logo.png" alt="image-2" className="w-[65%] rounded-md object-cover " />
-          </div>
-            <div className="flex w-[100%] justify-between gap-5 ">
-                <img src="/images/CharlaCTPE.jpeg" alt="image-1" className="w-[65%] rounded-md object-none " />
-                <img src="/images/Logo2.png" alt="" className="w-[35%] rounded-md" />
-          </div>
-        </div>
-        <p className="text-left text-xl">I currently looking for an opportunity to develop my skills and learn new things.</p>
-        </div>
-    )
+import Hero from "../components/sections/Hero";
+import AboutSection from "../components/sections/AboutSection";
+import SkillsSection from "../components/sections/SkillsSection";
+import AiSection from "../components/sections/AiSection";
+import SurfacesTeaser from "../components/sections/SurfacesTeaser";
+import CtaBand from "../components/sections/CtaBand";
+import Marquee from "../components/ui/Marquee";
+
+const TICKER = [
+  "React",
+  "TypeScript",
+  "Java",
+  "Spring Boot",
+  "TailwindCSS",
+  "Astro",
+  "Svelte",
+  "Motion",
+  "Design systems",
+  "AI-assisted engineering",
+];
+
+export default function HomePage() {
+  return (
+    <>
+      <Hero />
+      <div className="mt-24 border-y border-space-700/60">
+        <Marquee items={TICKER} />
+      </div>
+      <AboutSection />
+      <SkillsSection />
+      <AiSection />
+      <SurfacesTeaser />
+      <CtaBand />
+    </>
+  );
 }
-export default HomePage;

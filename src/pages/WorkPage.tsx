@@ -1,83 +1,105 @@
-function WorkPage() {
+import { useRef } from "react";
+import { motion, useScroll, useSpring } from "motion/react";
+import SectionHeading from "../components/ui/SectionHeading";
+import Reveal from "../components/ui/Reveal";
+import GlassPanel from "../components/ui/GlassPanel";
+import Pill from "../components/ui/Pill";
+import LiquidButton from "../components/ui/LiquidButton";
+import { experience } from "../data/experience";
+import { contactFormUrl } from "../data/site";
+
+export default function WorkPage() {
+  const timelineRef = useRef<HTMLOListElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start 70%", "end 60%"],
+  });
+  const progress = useSpring(scrollYProgress, { stiffness: 80, damping: 24 });
+
   return (
-    <div className="flex flex-col gap-5 satoshi-medium  text-white">
-      <p className="text-left text-2xl">
-          I currently have over a year of experience working in different areas.
-          Here my resume so far.
-      </p>
-      <hr className="#A3A3A3" />
-      <div className="flex flex-col gap-10 text-[#fffff]">
-        <div className="flex flex-col gap-5 text-left">
-          <div className="flex flex-col">
-            <h3 className="geist-bold text-xl satoshi-bold">Amazon International</h3>
-            <p className="#A3A3A3 text-md]">FinOps Payments</p>
-          </div>
-          <p>
-            Amazon International in financial field in charge of payable payments and differents process that requires Oracle Financial Application Knowledge and work with people from another countries.
-          </p>
-          <ul className="flex flex-col gap-2 list-disc">
-            <li>
-                Period of time 3 months.
-            </li>
-            <li>
-                Worked with Oracle Financial Application.
-            </li>
-          </ul>
-          <p>
-                It was a good experience to learn about the business world in a company like Amazon. It was a good environment to work and the way that they do their daily tasks.
-          </p>
+    <>
+      <SectionHeading
+        index="02 — Work"
+        title="Where I have been, and what it taught me."
+        lede="Three tracks running in parallel: a global finance operation, independent client work, and a full stack program. Each one changed how I approach the next."
+      />
+
+      <ol ref={timelineRef} className="relative space-y-6 pl-10 md:pl-14">
+        <span aria-hidden="true" className="absolute bottom-6 left-3 top-6 w-px bg-space-700" />
+        <motion.span
+          aria-hidden="true"
+          style={{ scaleY: progress }}
+          className="absolute bottom-6 left-3 top-6 w-px origin-top bg-gradient-to-b from-ion via-nebula to-pulsar"
+        />
+
+        {experience.map((entry, index) => (
+          <Reveal as="li" key={entry.id} delay={index * 0.08} className="relative">
+            <span
+              aria-hidden="true"
+              className="absolute -left-10 top-8 grid h-[25px] w-[25px] place-items-center rounded-full border border-space-600 bg-space-900 md:-left-14"
+            >
+              <span
+                className={`h-2 w-2 rounded-full ${
+                  entry.current ? "bg-ion shadow-[0_0_10px_2px_rgba(110,231,249,0.55)]" : "bg-faint"
+                }`}
+              />
+            </span>
+
+            <GlassPanel className="p-7 md:p-9">
+              <div className="flex flex-wrap items-start justify-between gap-4">
+                <div>
+                  <h2 className="text-xl font-semibold tracking-tight text-star md:text-2xl">
+                    {entry.org}
+                  </h2>
+                  <p className="mt-1.5 font-mono text-[12px] uppercase tracking-[0.16em] text-dust">
+                    {entry.role}
+                  </p>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  {entry.current ? (
+                    <Pill accent="ion">Ongoing</Pill>
+                  ) : (
+                    <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-faint">
+                      {entry.period}
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <p className="mt-6 text-[15px] leading-relaxed text-dust">{entry.summary}</p>
+
+              <ul className="mt-6 space-y-2.5">
+                {entry.highlights.map((highlight) => (
+                  <li key={highlight} className="flex gap-3 text-[15px] leading-relaxed text-dust">
+                    <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-ion" />
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+
+              {/* The takeaway is the part a recruiter actually remembers. */}
+              <blockquote className="mt-7 border-l-2 border-space-500 pl-5 text-[15px] italic leading-relaxed text-star/90">
+                {entry.takeaway}
+              </blockquote>
+
+              <div className="mt-7 flex flex-wrap gap-2">
+                {entry.stack.map((tool) => (
+                  <Pill key={tool}>{tool}</Pill>
+                ))}
+              </div>
+            </GlassPanel>
+          </Reveal>
+        ))}
+      </ol>
+
+      <Reveal className="mt-20 text-center">
+        <p className="text-lead text-dust">Want the full picture?</p>
+        <div className="mt-7 flex justify-center">
+          <LiquidButton href={contactFormUrl} external>
+            Ask me anything
+          </LiquidButton>
         </div>
-        <hr className="#A3A3A3" />
-        <div className="flex flex-col gap-3 text-left">
-          <div className="flex flex-col">
-            <h3 className="geist-bold text-xl satoshi-bold">Freelancer Designer</h3>
-            <p className="#A3A3A3 text-md]">
-                Currently working in it.
-            </p>
-          </div>
-          <p>
-              Near to my residence I found people and entrepeneurs who need help in the TechWorld where we live. I started to help them with designs to improve they digital identity.
-          </p>
-          <ul className="flex flex-col gap-2 list-disc">
-            <li>
-                Posts creation for social media.
-            </li>
-            <li>
-                Work with the creation of inventories for some little companies.
-            </li>
-          </ul>
-          <p>
-            It's a good way to help people and learn about the needs of them in my community
-            since I work in this area like freelancer I learned a lot about customer service, soft skills and hard skills.
-          </p>
-        </div>
-        <hr className="#A3A3A3" />
-        <div className="flex flex-col gap-3 text-left">
-            <div className="flex flex-col">
-              <h3 className="geist-bold text-xl satoshi-bold">Alura Latam Student</h3>
-              <p className="#A3A3A3 text-md]">
-                  Currently working in it.
-              </p>
-            </div>
-            <p>
-              In Oracle Next Education I found a place to practice my knowledge and my skills in the programming area. Currently I was studying backend development but I also love the frontend field. In my goals I have the purpose to become a Full Stack developer.
-            </p>
-            <ul className="flex flex-col gap-2 list-disc">
-              <li>
-                  Java development in SpringBoot framework. That includes: RestApi, SOLID Principles, MVC, how to work with CRUD, POO principles.
-              </li>
-              <li>
-                  In frontend work with Astro, React, JavaScript, HTML, CSS, TypeScript, TailwindCSS, Svelte.
-              </li>
-            </ul>
-            <p>
-              It's a good way to help people and learn about the needs of them in my community
-              since I work in this area like freelancer I learned a lot about customer service, soft skills and hard skills.
-            </p>
-          </div>
-      </div>
-    </div>
+      </Reveal>
+    </>
   );
 }
-
-export default WorkPage;
