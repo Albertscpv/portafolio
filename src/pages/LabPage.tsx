@@ -17,7 +17,7 @@ export default function LabPage() {
   return (
     <>
       <SectionHeading
-        index="04 — Lab"
+        index="05 — Lab"
         title="Three surface languages, taken apart."
         lede="Neumorphism, glassmorphism and liquid are not decorations — each one simulates a different physical material, and each fails in a different way. Every demo below is live, and the snippet beside it is the code actually running it."
       />

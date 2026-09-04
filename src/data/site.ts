@@ -29,8 +29,9 @@ export const navLinks = [
   { title: "Projects", short: "01", path: "/projects" },
   { title: "Work", short: "02", path: "/work" },
   { title: "Designs", short: "03", path: "/designs" },
-  { title: "Lab", short: "04", path: "/lab" },
-  { title: "Contact", short: "05", path: "/contact" },
+  { title: "Brand", short: "04", path: "/brand" },
+  { title: "Lab", short: "05", path: "/lab" },
+  { title: "Contact", short: "06", path: "/contact" },
 ] as const;
 
 export type NavLink = (typeof navLinks)[number];
