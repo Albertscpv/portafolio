@@ -3,6 +3,7 @@ import { Link, NavLink as RouterNavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { navLinks, profile } from "../../data/site";
 import Logo from "./Logo";
+import { NAV_MARK_ID } from "./Intro";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -54,7 +55,9 @@ export default function NavBar() {
             className="group flex items-center gap-3"
             aria-label={`${profile.name} — home`}
           >
-            <Logo />
+            <span id={NAV_MARK_ID} className="grid h-9 w-9 place-items-center">
+              <Logo />
+            </span>
             <span className="hidden leading-tight sm:block">
               <span className="block font-semibold tracking-tight text-star">{profile.short}</span>
               <span className="block font-mono text-[10px] uppercase tracking-[0.22em] text-faint transition-colors group-hover:text-ion">

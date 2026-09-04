@@ -1,3 +1,4 @@
+import { useCallback, useState } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence, MotionConfig, useReducedMotion } from "motion/react";
 
@@ -9,6 +10,7 @@ import Footer from "./components/layout/Footer";
 import ScrollProgress from "./components/layout/ScrollProgress";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import PageTransition from "./components/layout/PageTransition";
+import Intro from "./components/layout/Intro";
 
 import { usePointerVars } from "./hooks/usePointer";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
@@ -17,6 +19,7 @@ import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import WorkPage from "./pages/WorkPage";
 import DesignsPage from "./pages/DesignsPage";
+import BrandPage from "./pages/BrandPage";
 import LabPage from "./pages/LabPage";
 import ContactPage from "./pages/ContactPage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -26,14 +29,37 @@ const ROUTES = [
   { path: "/projects", element: <ProjectsPage /> },
   { path: "/work", element: <WorkPage /> },
   { path: "/designs", element: <DesignsPage /> },
+  { path: "/brand", element: <BrandPage /> },
   { path: "/lab", element: <LabPage /> },
   { path: "/contact", element: <ContactPage /> },
   { path: "*", element: <NotFoundPage /> },
 ];
 
+const INTRO_KEY = "intro:seen";
+
+/** Once per browser session, and never when motion is unwelcome. */
+function shouldPlayIntro(reduced: boolean) {
+  if (reduced) return false;
+  try {
+    return sessionStorage.getItem(INTRO_KEY) !== "1";
+  } catch {
+    return false;
+  }
+}
+
 function Shell() {
   const location = useLocation();
   const reduced = useReducedMotion() ?? false;
+  const [introPlaying, setIntroPlaying] = useState(() => shouldPlayIntro(reduced));
+
+  const endIntro = useCallback(() => {
+    setIntroPlaying(false);
+    try {
+      sessionStorage.setItem(INTRO_KEY, "1");
+    } catch {
+      /* private mode — the intro simply plays again next time */
+    }
+  }, []);
 
   usePointerVars(!reduced);
   useSmoothScroll(!reduced);
@@ -71,6 +97,10 @@ function Shell() {
       </main>
 
       <Footer />
+
+      <AnimatePresence>
+        {introPlaying ? <Intro key="intro" onDone={endIntro} /> : null}
+      </AnimatePresence>
     </>
   );
 }

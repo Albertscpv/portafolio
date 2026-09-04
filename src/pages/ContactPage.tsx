@@ -29,7 +29,7 @@ export default function ContactPage() {
   return (
     <>
       <SectionHeading
-        index="05 — Contact"
+        index="06 — Contact"
         title="Open channel."
         lede={profile.statusDetail}
       />

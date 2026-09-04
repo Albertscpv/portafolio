@@ -41,7 +41,7 @@ src/
 ├── components/
 │   ├── background/    Star canvas, matte grain, cursor aura
 │   ├── ui/            GlassPanel, NeuSurface, LiquidButton, Magnetic, Reveal…
-│   ├── layout/        NavBar, Footer, page transitions, scroll progress
+│   ├── layout/        NavBar, Footer, intro curtain, page transitions
 │   ├── sections/      Home page sections
 │   └── lab/           Interactive demos for the Lab page
 └── pages/         One file per route
@@ -58,6 +58,7 @@ touching a component.
 | `/projects` | Repositories pulled live from the GitHub API, filterable     |
 | `/work`     | Experience timeline with a scroll-linked progress rail       |
 | `/designs`  | Gallery with a shared-element lightbox (arrows + `Esc`)      |
+| `/brand`    | The mark at scale: construction, variants, clear space, misuse |
 | `/lab`      | Live, documented demos of the three surface languages        |
 | `/contact`  | Brief form, social handles, availability                     |
 
@@ -87,6 +88,9 @@ demonstrates all three live, next to the exact CSS running them.
   the mouse never triggers a re-render.
 - GitHub responses are cached in `localStorage` for 30 minutes — the
   unauthenticated API allows 60 requests per hour per IP.
+- The intro curtain measures the navbar mark's live bounding rect and flies to
+  it, so the two are pixel-aligned at handoff. It plays once per browser
+  session, skips on any click or keypress, and never runs under reduced motion.
 - `prefers-reduced-motion` is honoured everywhere: springs stop, smooth scroll
   is never installed, the star field renders one still frame, and the layout is
   unchanged.
