@@ -30,16 +30,16 @@ export const styleSpecs: StyleSpec[] = [
     pitfall:
       "Contrast. Pure neumorphism fails WCAG on its own, so every interactive control here also carries a real border or accent color on focus and hover.",
     css: `.neu {
-  background: #141a2c;
+  background: #171717;
   box-shadow:
-     8px  8px 20px rgba(2, 4, 10, 0.75),
-    -8px -8px 20px rgba(63, 74, 112, 0.16);
+     8px  8px 20px rgba(0, 0, 0, 0.80),
+    -8px -8px 20px rgba(255, 255, 255, 0.05);
 }
 
 .neu:active {
   box-shadow:
-    inset  6px  6px 14px rgba(2, 4, 10, 0.80),
-    inset -6px -6px 14px rgba(63, 74, 112, 0.14);
+    inset  6px  6px 14px rgba(0, 0, 0, 0.85),
+    inset -6px -6px 14px rgba(255, 255, 255, 0.045);
 }`,
   },
   {

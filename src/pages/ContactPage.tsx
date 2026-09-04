@@ -73,7 +73,7 @@ export default function ContactPage() {
               <p className="px-5 pb-2 pt-5 font-mono text-[10px] uppercase tracking-[0.22em] text-faint">
                 Elsewhere
               </p>
-              <ul className="divide-y divide-[#0b1020]">
+              <ul className="divide-y divide-crease">
                 {socials.map((social) => (
                   <li key={social.href} className="flex items-center justify-between gap-3 px-5 py-4">
                     <a
@@ -91,7 +91,7 @@ export default function ContactPage() {
                       type="button"
                       onClick={() => copy(social.handle)}
                       aria-label={`Copy ${social.label} handle`}
-                      className="rounded-lg bg-[#141a2c] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-dust shadow-neu-raised-sm transition-shadow active:shadow-neu-inset-sm"
+                      className="rounded-lg bg-surface px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-dust shadow-neu-raised-sm transition-shadow active:shadow-neu-inset-sm"
                     >
                       {copied === social.handle ? "Copied" : "Copy"}
                     </button>

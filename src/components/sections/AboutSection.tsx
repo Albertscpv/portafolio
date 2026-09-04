@@ -28,10 +28,10 @@ export default function AboutSection() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          {/* Neumorphic block: element and container share #141a2c, so the
+          {/* Neumorphic block: element and container share the `surface` token, so the
               dividers read as creases in one sheet rather than borders. */}
           <NeuSurface className="p-2">
-            <ul className="divide-y divide-[#0b1020]">
+            <ul className="divide-y divide-crease">
               {FACETS.map((facet) => (
                 <li key={facet.key} className="px-5 py-5">
                   <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ion/80">

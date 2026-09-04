@@ -31,7 +31,7 @@ function Trail() {
       ref={ref}
       onPointerMove={onMove}
       onPointerLeave={() => setActive(false)}
-      className="relative h-[340px] cursor-crosshair overflow-hidden rounded-2xl border border-space-700/70 bg-space-950"
+      className="relative h-[340px] cursor-crosshair overflow-hidden rounded-2xl border border-space-700/70 bg-void"
     >
       {/* Everything inside this span is fused by the metaball filter. */}
       <span className="absolute inset-0" style={{ filter: "url(#goo)" }} aria-hidden="true">

@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 const MODES = ["Focus", "Ambient", "Deep"];
 
 /**
- * A soft-UI control console. Every control shares one base color (#141a2c) and
+ * A soft-UI control console. Every control shares one base color (the `surface` token) and
  * one light direction (top-left) — swap either and the whole thing flattens.
  */
 export default function NeuDemo() {
@@ -13,7 +13,7 @@ export default function NeuDemo() {
   const [mode, setMode] = useState(1);
 
   return (
-    <div className="rounded-2xl bg-[#141a2c] p-7 shadow-neu-raised sm:p-10">
+    <div className="rounded-2xl bg-surface p-7 shadow-neu-raised sm:p-10">
       <div className="flex flex-wrap items-center justify-between gap-6">
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-faint">Console</p>
@@ -26,12 +26,12 @@ export default function NeuDemo() {
           aria-checked={power}
           aria-label="Power"
           onClick={() => setPower((value) => !value)}
-          className="flex h-11 w-[86px] items-center rounded-full bg-[#141a2c] px-1.5 shadow-neu-inset"
+          className="flex h-11 w-[86px] items-center rounded-full bg-surface px-1.5 shadow-neu-inset"
         >
           <motion.span
             layout
             transition={{ type: "spring", stiffness: 520, damping: 34 }}
-            className={`grid h-8 w-8 place-items-center rounded-full bg-[#141a2c] shadow-neu-raised-sm ${
+            className={`grid h-8 w-8 place-items-center rounded-full bg-surface shadow-neu-raised-sm ${
               power ? "ml-auto" : ""
             }`}
           >
@@ -55,7 +55,7 @@ export default function NeuDemo() {
           <span className="font-mono text-[12px] text-dust">{level}%</span>
         </div>
         {/* The track is an inset groove; the fill is a lit channel inside it. */}
-        <div className="relative h-6 rounded-full bg-[#141a2c] px-1.5 shadow-neu-inset">
+        <div className="relative h-6 rounded-full bg-surface px-1.5 shadow-neu-inset">
           <div className="relative h-full">
             <div
               className="absolute top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-gradient-to-r from-ion/70 to-nebula/70 transition-[width] duration-150"
@@ -72,7 +72,7 @@ export default function NeuDemo() {
             />
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#141a2c] shadow-neu-raised-sm transition-[left] duration-150"
+              className="pointer-events-none absolute top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-surface shadow-neu-raised-sm transition-[left] duration-150"
               style={{ left: `${level}%` }}
             />
           </div>
@@ -90,7 +90,7 @@ export default function NeuDemo() {
                 type="button"
                 aria-pressed={active}
                 onClick={() => setMode(index)}
-                className={`flex-1 rounded-xl bg-[#141a2c] px-4 py-3 text-sm transition-all duration-300 ${
+                className={`flex-1 rounded-xl bg-surface px-4 py-3 text-sm transition-all duration-300 ${
                   active
                     ? "text-ion shadow-neu-inset"
                     : "text-dust shadow-neu-raised-sm hover:text-star"

@@ -13,7 +13,7 @@ export default function GlassDemo() {
 
   return (
     <div className="overflow-hidden rounded-2xl border border-space-700/70">
-      <div className="relative grid h-[340px] place-items-center overflow-hidden bg-space-950">
+      <div className="relative grid h-[340px] place-items-center overflow-hidden bg-void">
         <motion.span
           aria-hidden="true"
           className="absolute h-64 w-64 rounded-full bg-ion/70 blur-2xl"

@@ -1,8 +1,12 @@
 # Portfolio — Christopher Monge Marín
 
-Personal portfolio built as a deep-space instrument panel: a live star field, a
-strict typographic grid, and three surface languages — **neumorphism**,
+Personal portfolio built as a deep-space instrument panel: a live star field on
+a matte monochrome ground, and three surface languages — **neumorphism**,
 **glassmorphism** and **liquid** — used as real materials rather than decoration.
+
+The backdrop is deliberately colourless — pure black through neutral greys,
+finished with a fractal-noise grain — so the only colour on the page comes from
+the interface itself.
 
 **Stack:** React 18 · TypeScript · Vite · TailwindCSS · Motion · Lenis
 
@@ -35,7 +39,7 @@ src/
 │   └── lab.ts         Specs and code snippets for the three surface styles
 ├── hooks/         usePointerVars, useSmoothScroll, useGithubRepos
 ├── components/
-│   ├── background/    Star canvas, nebulae, cursor aura
+│   ├── background/    Star canvas, matte grain, cursor aura
 │   ├── ui/            GlassPanel, NeuSurface, LiquidButton, Magnetic, Reveal…
 │   ├── layout/        NavBar, Footer, page transitions, scroll progress
 │   ├── sections/      Home page sections
@@ -73,6 +77,9 @@ demonstrates all three live, next to the exact CSS running them.
 
 ## Performance and accessibility notes
 
+- The matte grain is a single inline SVG data URI (`feTurbulence`, desaturated
+  in the same filter), so the finish costs no runtime work and hides the banding
+  that large soft gradients produce on 8-bit displays.
 - The star field is one `<canvas>` on a single `requestAnimationFrame` loop.
   Density scales with viewport area, it pauses on `visibilitychange`, and
   device pixel ratio is capped at 2.

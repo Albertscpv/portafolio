@@ -8,19 +8,19 @@ import { styleSpecs } from "../../data/lab";
 function NeuPreview() {
   const [on, setOn] = useState(true);
   return (
-    <div className="grid h-32 place-items-center rounded-xl bg-[#141a2c]">
+    <div className="grid h-32 place-items-center rounded-xl bg-surface">
       <button
         type="button"
         role="switch"
         aria-checked={on}
         aria-label="Neumorphism preview toggle"
         onClick={() => setOn((value) => !value)}
-        className="flex h-10 w-20 items-center rounded-full bg-[#141a2c] px-1.5 shadow-neu-inset transition-shadow"
+        className="flex h-10 w-20 items-center rounded-full bg-surface px-1.5 shadow-neu-inset transition-shadow"
       >
         <motion.span
           layout
           transition={{ type: "spring", stiffness: 520, damping: 32 }}
-          className={`h-7 w-7 rounded-full bg-[#141a2c] shadow-neu-raised-sm ${
+          className={`h-7 w-7 rounded-full bg-surface shadow-neu-raised-sm ${
             on ? "ml-auto" : ""
           }`}
         >
@@ -37,7 +37,7 @@ function NeuPreview() {
 
 function GlassPreview() {
   return (
-    <div className="relative grid h-32 place-items-center overflow-hidden rounded-xl bg-space-900">
+    <div className="relative grid h-32 place-items-center overflow-hidden rounded-xl bg-crease">
       <motion.span
         aria-hidden="true"
         className="absolute h-28 w-28 rounded-full bg-gradient-to-br from-ion to-pulsar blur-lg"
@@ -53,7 +53,7 @@ function GlassPreview() {
 
 function LiquidPreview() {
   return (
-    <div className="grid h-32 place-items-center rounded-xl bg-space-900">
+    <div className="grid h-32 place-items-center rounded-xl bg-crease">
       <span
         className="relative flex h-20 w-40 items-center justify-center"
         style={{ filter: "url(#goo)" }}

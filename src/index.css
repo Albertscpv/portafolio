@@ -123,11 +123,11 @@
      Soft UI only works when the element and its parent share one base color,
      so the shadows read as the same material being pushed or pulled. */
   .neu {
-    background: #141a2c;
+    background: theme("colors.surface");
     @apply shadow-neu-raised;
   }
   .neu-pressed {
-    background: #141a2c;
+    background: theme("colors.surface");
     @apply shadow-neu-inset;
   }
 
