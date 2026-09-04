@@ -10,7 +10,7 @@ interface NeuSurfaceProps {
 }
 
 /**
- * Soft-UI material. The background color is fixed at #141a2c and must match
+ * Soft-UI material. The background color is fixed at the `surface` token and must match
  * whatever sits behind it — neumorphism is one sheet of material, and a
  * mismatched parent breaks the illusion instantly.
  */
@@ -31,6 +31,6 @@ export default function NeuSurface({
         : "shadow-neu-inset";
 
   return (
-    <Tag className={`rounded-2xl bg-[#141a2c] ${shadow} ${className}`}>{children}</Tag>
+    <Tag className={`rounded-2xl bg-surface ${shadow} ${className}`}>{children}</Tag>
   );
 }

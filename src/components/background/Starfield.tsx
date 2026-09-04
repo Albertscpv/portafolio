@@ -21,7 +21,7 @@ interface Meteor {
   ttl: number;
 }
 
-const TINTS = ["#ffffff", "#dbe6ff", "#cfe9ff", "#ffe9c9", "#e6d8ff"];
+const TINTS = ["#ffffff", "#ededed", "#d4d4d4", "#a3a3a3", "#fafafa"];
 
 /**
  * The deep-field backdrop. One canvas, three parallax depths, and a meteor

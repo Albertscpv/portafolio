@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         // Deep space substrate — from the void to the lit instrument panel.
-        void: "#04050A",
+        void: "#000000",
         space: {
           950: "#05070E",
           900: "#080B16",
@@ -20,6 +20,10 @@ export default {
         nebula: "#A78BFA",
         pulsar: "#F472B6",
         solar: "#FBBF24",
+        // The neumorphic sheet. Every soft-UI element and its container must
+        // share this exact value, so it lives here rather than inline.
+        surface: "#171717",
+        crease: "#0d0d0d",
         star: "#E9EDFA",
         dust: "#98A2C0",
         faint: "#5A6488",
@@ -36,22 +40,19 @@ export default {
       },
       boxShadow: {
         // Neumorphism on a dark base: one light source, top-left, always.
-        "neu-raised": "8px 8px 20px rgba(2,4,10,0.75), -8px -8px 20px rgba(63,74,112,0.16)",
-        "neu-raised-sm": "4px 4px 10px rgba(2,4,10,0.7), -4px -4px 10px rgba(63,74,112,0.14)",
+        "neu-raised": "8px 8px 20px rgba(0,0,0,0.80), -8px -8px 20px rgba(255,255,255,0.05)",
+        "neu-raised-sm": "4px 4px 10px rgba(0,0,0,0.75), -4px -4px 10px rgba(255,255,255,0.045)",
         "neu-inset":
-          "inset 6px 6px 14px rgba(2,4,10,0.8), inset -6px -6px 14px rgba(63,74,112,0.14)",
+          "inset 6px 6px 14px rgba(0,0,0,0.85), inset -6px -6px 14px rgba(255,255,255,0.045)",
         "neu-inset-sm":
-          "inset 3px 3px 7px rgba(2,4,10,0.75), inset -3px -3px 7px rgba(63,74,112,0.12)",
+          "inset 3px 3px 7px rgba(0,0,0,0.80), inset -3px -3px 7px rgba(255,255,255,0.04)",
         glass: "0 8px 32px rgba(2,4,12,0.5), inset 0 1px 0 rgba(255,255,255,0.09)",
         halo: "0 0 0 1px rgba(110,231,249,0.28), 0 0 32px -6px rgba(110,231,249,0.45)",
       },
       backgroundImage: {
-        "grid-fine":
-          "linear-gradient(rgba(148,163,205,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,205,0.055) 1px, transparent 1px)",
         "glass-sheen":
           "linear-gradient(140deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.02) 38%, rgba(255,255,255,0) 60%)",
       },
-      backgroundSize: { "grid-fine": "64px 64px" },
       keyframes: {
         drift: {
           "0%,100%": { transform: "translate3d(0,0,0) scale(1)" },
