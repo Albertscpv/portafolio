@@ -17,7 +17,7 @@ export const skillGroups: SkillGroup[] = [
     id: "backend",
     label: "Backend",
     accent: "nebula",
-    items: ["Java", "Spring Boot", "REST APIs", "SOLID", "MVC", "OOP", "SQL"],
+    items: ["Java", "Spring Boot", "Python", "REST APIs", "AWS CLI", "SOLID", "MVC", "SQL"],
   },
   {
     id: "design",
@@ -29,7 +29,7 @@ export const skillGroups: SkillGroup[] = [
     id: "domain",
     label: "Domain",
     accent: "solar",
-    items: ["Accounting", "FinOps", "Oracle Financials", "Process analysis"],
+    items: ["Accounting", "FinOps", "Oracle Financials", "Process automation"],
   },
 ];
 

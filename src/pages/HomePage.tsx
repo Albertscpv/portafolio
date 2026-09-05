@@ -11,6 +11,8 @@ const TICKER = [
   "TypeScript",
   "Java",
   "Spring Boot",
+  "Python",
+  "AWS",
   "TailwindCSS",
   "Astro",
   "Svelte",
