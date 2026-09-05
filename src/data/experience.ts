@@ -13,6 +13,25 @@ export interface Experience {
 
 export const experience: Experience[] = [
   {
+    id: "amazon",
+    org: "Amazon International",
+    role: "FinOps — Payments & Automation",
+    period: "Ongoing",
+    current: true,
+    summary:
+      "Accounts payable inside a global finance operation — and, increasingly, the software that runs it. I started processing payments in Oracle Financial Applications and now build the automation, tooling and dashboards the daily process depends on.",
+    highlights: [
+      "Internal automation built with Kiro and Claude Code, replacing steps the team ran by hand",
+      "Web apps and live dashboards that surface operational data instead of it being compiled manually",
+      "Data pipelines in Python, orchestrated through the AWS CLI and kiro-cli",
+      "Scoping, planning and delivering these projects end to end alongside teams in other countries",
+      "Working inside strict financial controls, so every automation has to stay auditable",
+    ],
+    takeaway:
+      "Most of the friction I saw in a company that size was software, not people — so I stopped describing it and started building the tools that removed it. That is also where AI-assisted development stopped being a curiosity for me and became how I actually ship.",
+    stack: ["Python", "AWS CLI", "kiro-cli", "Kiro", "Claude Code", "Oracle Financials"],
+  },
+  {
     id: "freelance",
     org: "Freelance Designer & Developer",
     role: "Independent",
@@ -45,21 +64,5 @@ export const experience: Experience[] = [
     takeaway:
       "Learning backend properly changed how I write frontend. I now design the interface around the data contract instead of the other way round.",
     stack: ["Java", "Spring Boot", "React", "Astro", "Svelte", "TypeScript"],
-  },
-  {
-    id: "amazon",
-    org: "Amazon International",
-    role: "FinOps — Payments",
-    period: "3 months",
-    summary:
-      "Accounts payable inside a global finance operation: processing payments and running daily processes on Oracle Financial Applications alongside teams in other countries.",
-    highlights: [
-      "Payable payments processing in Oracle Financial Applications",
-      "Daily cross-border coordination with teams in different time zones",
-      "Operating inside strict financial controls and audit trails",
-    ],
-    takeaway:
-      "Seeing how a company of that size runs its money taught me why internal tools matter. Most of the friction I saw was software, not people.",
-    stack: ["Oracle Financials", "Excel", "Process Ops"],
   },
 ];
